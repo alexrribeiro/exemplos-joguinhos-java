@@ -15,3 +15,6 @@ Ao executar você encontra um menu para escolher entre um dos dois jogos. No *pa
 ## 🚥 Status atual do projeto e ideias futuras:
 * 🟢 Funcionando 
 * ▶️ Revisar o código e melhorar os métodos que for possível melhorar.
+
+## 👷‍♂️ Autor do projeto:
+[Alex Ramos Ribeiro](https://alexrribeiro.github.io/curriculum)
