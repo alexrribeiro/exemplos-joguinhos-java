@@ -1,3 +1,5 @@
+package jogos;
+
 import java.util.Scanner;
 
 public class Jogos {
