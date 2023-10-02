@@ -4,18 +4,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class PedraPapelTesoura {
-    int escolhaDoUsuario = 0;
-    String escolhaUsuarioStr;
-    int escolhaDoComputador;
-    String escolhaComputadorStr;
-    int placarUsuario = 0;
-    int placarComputador = 0;
+    private int escolhaDoUsuario = 0;
+    private String escolhaUsuarioStr;
+    private int escolhaDoComputador;
+    private String escolhaComputadorStr;
+    private int placarUsuario = 0;
+    private int placarComputador = 0;
     Scanner sc = new Scanner(System.in);
     Random rd = new Random();
 
     public PedraPapelTesoura() {}
 
-    void jogar() {
+    public void jogar() {
         do {
             executarJogo();
             if (placarUsuario == 5) {
@@ -25,7 +25,7 @@ public class PedraPapelTesoura {
             }
         } while (placarUsuario < 5 && placarComputador < 5);
     }
-    void executarJogo() {
+    private void executarJogo() {
         String mensagem = "";
         String eu = receberEscolhaDoUsuario();
         String ec = gerarEscolhaDoComputador();
@@ -46,7 +46,7 @@ public class PedraPapelTesoura {
         System.out.println(String.format("Você: %d x %d Computador", placarUsuario, placarComputador));
     }
 
-    String receberEscolhaDoUsuario() {
+    private String receberEscolhaDoUsuario() {
         escolhaDoUsuario = 0;
         while (escolhaDoUsuario < 1 || escolhaDoUsuario > 3) {
             System.out.println("Pedra, papel ou tesoura? \nPressione [1] para PEDRA, [2] para PAPEL ou [3] para TESOURA");
@@ -57,14 +57,14 @@ public class PedraPapelTesoura {
         return escolhaUsuarioStr;
     }
 
-    String gerarEscolhaDoComputador() {
+    private String gerarEscolhaDoComputador() {
         escolhaDoComputador = rd.nextInt(3) + 1;
         escolhaComputadorStr = traduzirEscolha(escolhaDoComputador);
         System.out.println("O computador escolheu: " + escolhaComputadorStr);
         return escolhaComputadorStr;
     }
 
-    String traduzirEscolha(int escolha) {
+    private String traduzirEscolha(int escolha) {
         String opcao = "";
 
         switch (escolha) {

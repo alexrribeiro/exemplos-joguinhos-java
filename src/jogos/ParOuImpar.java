@@ -4,17 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ParOuImpar {
-    String decisaoDoUsuario;
-    int numeroDoUsuario;
-    int numeroDoComputador;
-    int restoNecessario;
-    String vencedor;
+    private String decisaoDoUsuario;
+    private int numeroDoUsuario;
+    private int numeroDoComputador;
+    private int restoNecessario;
+    private String vencedor;
     Scanner sc = new Scanner(System.in);
     Random r = new Random();
 
     public ParOuImpar() {}
 
-    void jogar() {
+    public void jogar() {
         String continuar = "S";
 
         do {
@@ -28,7 +28,7 @@ public class ParOuImpar {
         } while (!continuar.equalsIgnoreCase("N"));
     }
 
-    String executarJogo() {
+    private String executarJogo() {
         String mensagem;
 
         receberDecisaoDoUsuario();
@@ -45,7 +45,7 @@ public class ParOuImpar {
         return mensagem;
     }
 
-    void receberDecisaoDoUsuario() {
+    private void receberDecisaoDoUsuario() {
         restoNecessario = 2;
         while (restoNecessario == 2) {
             System.out.println("Par ou ímpar? \nDigite [P] para PAR ou [I] para ÍMPAR: ");
@@ -63,7 +63,7 @@ public class ParOuImpar {
         }
     }
 
-    void receberNumeroDoUsuario () {
+    private void receberNumeroDoUsuario () {
         do {
             System.out.println("Digite um número entre 0 e 5: ");
             numeroDoUsuario = sc.nextInt();
@@ -75,12 +75,12 @@ public class ParOuImpar {
         } while (numeroDoUsuario < 0 || numeroDoUsuario > 5);
     }
 
-    void gerarNumeroDoComputador() {
+    private void gerarNumeroDoComputador() {
         numeroDoComputador = r.nextInt(6);
         System.out.println("Computador escolheu " + numeroDoComputador);
     }
 
-    String verificarVencedor() {
+    private String verificarVencedor() {
         if (restoNecessario == (numeroDoUsuario + numeroDoComputador) % 2) {
             vencedor = "Usuário";
         } else {
