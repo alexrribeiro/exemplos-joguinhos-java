@@ -51,7 +51,10 @@ public class SuperSete {
     }
 
     private void exibirResultado(int acertos) {
-        System.out.printf("Você acertou %d números!%n", acertos);
+        if (acertos != 1)
+            System.out.printf("Você acertou %d números!%n", acertos);
+        else
+            System.out.printf("Você acertou %d número!%n", acertos);
 
         if (acertos <= 3) {
             System.out.println("Não ganhou nada!");
